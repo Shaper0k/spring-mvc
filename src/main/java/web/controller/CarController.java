@@ -16,25 +16,10 @@ public class CarController {
     public String printCar (@RequestParam (value = "count", required = false) Integer count , ModelMap model){
 
         CarServiceImp carServiceImp = new CarServiceImp();
-        switch (count) {
-            case 1:
-                model.addAttribute("cars", carServiceImp.getCars(1));
-                break;
-            case 2:
-                model.addAttribute("cars", carServiceImp.getCars(2));
-                break;
-            case 3:
-                model.addAttribute("cars",carServiceImp.getCars(3));
-                break;
-            case 4:
-                model.addAttribute("cars",carServiceImp.getCars(4));
-                break;
+        count = count == null ? 5 : count;
 
-            default:
-                model.addAttribute("cars",carServiceImp.getCars(5));
-                break;
 
-        }
+        model.addAttribute("cars",carServiceImp.getCars(count));
         return "cars";
     }
 }
