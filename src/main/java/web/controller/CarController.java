@@ -17,9 +17,8 @@ public class CarController {
 
         CarServiceImp carServiceImp = new CarServiceImp();
         count = count == null ? 5 : count;
-
-
         model.addAttribute("cars",carServiceImp.getCars(count));
+
         return "cars";
     }
 }
