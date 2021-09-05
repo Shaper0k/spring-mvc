@@ -1,4 +1,4 @@
-package service;
+package web.service;
 
 import model.Car;
 
@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CarServiceImp implements CarService{
+public class ServiceImp implements Service{
 
+    protected static final ServiceImp carGet = new ServiceImp();
 
     @Override
     public List<Car> getCars(int count) {
