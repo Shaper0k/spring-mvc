@@ -1,14 +1,17 @@
 package web.service;
 
 import model.Car;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ServiceImp implements Service{
+@Service
+public class ServiceImp implements CarService{
 
-    protected static final ServiceImp carGet = new ServiceImp();
+
 
     @Override
     public List<Car> getCars(int count) {

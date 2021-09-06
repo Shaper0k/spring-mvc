@@ -4,8 +4,8 @@ import model.Car;
 
 import java.util.List;
 
-public interface Service {
-    Service getImpl = ServiceImp.carGet;
+public interface CarService {
+
 
     List<Car> getCars(int count);
 }
